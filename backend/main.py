@@ -3,9 +3,15 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
 from dotenv import load_dotenv
 
+from backend.routers.qa_router import router as qa_router
+
 load_dotenv()
 
-app = FastAPI(title="Smart Document Q&A with RAG")
+app = FastAPI(
+    title="Smart Document Q&A with RAG",
+    description="AI-powered document question answering using Retrieval Augmented Generation",
+    version="1.0.0"
+)
 
 origins = [
     "http://localhost:3000",
@@ -20,10 +26,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Include routers
+app.include_router(qa_router)
+
 @app.get("/")
 async def root():
     return RedirectResponse(url="/health")
 
 @app.get("/health")
 async def health_check():
-    return {"status": "ok i am working"}
+    return {
+        "status": "ok", 
+        "message": "Smart Document Q&A API is running",
+        "version": "1.0.0"
+    }
