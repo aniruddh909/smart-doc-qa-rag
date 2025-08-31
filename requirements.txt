@@ -12,3 +12,5 @@ numpy
 httpx
 openai
 sentence-transformers
+torch
+pytest

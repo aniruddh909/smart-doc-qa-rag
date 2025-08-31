@@ -1,7 +1,8 @@
 import os
 from typing import List
-from PyPDF2 import PdfReader
+from pypdf import PdfReader
 from docx import Document
+
 
 def parse_pdf(file_path: str) -> str:
     """Extract text from PDF."""
