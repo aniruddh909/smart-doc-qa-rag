@@ -16,3 +16,5 @@ openai
 sentence-transformers
 torch
 pytest
+transformers
+accelerate

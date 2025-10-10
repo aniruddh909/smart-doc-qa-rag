@@ -9,6 +9,7 @@ from pydantic import BaseModel
 
 from backend.utils.file_parser import parse_file
 from backend.services.embedding_service import embedding_service, DocumentChunk
+from backend.services.answer_generator import answer_generator
 
 router = APIRouter(prefix="/api", tags=["Q&A"])
 
@@ -150,14 +151,17 @@ async def query_documents(request: QueryRequest):
             }
             sources.append(source_info)
         
-        # Generate answer stub (placeholder for now - later integrate with LLM)
-        answer_stub = f"Based on the provided context about '{request.query}', I found {len(sources)} relevant sections. " \
-                     f"[This is a stub response - LLM integration coming next]"
+        # Generate AI answer using Hugging Face model
+        if answer_generator.is_available():
+            ai_answer = answer_generator.generate_answer(request.query, context)
+        else:
+            ai_answer = f"Based on the provided context about '{request.query}', I found {len(sources)} relevant sections. " \
+                       f"[Answer generation service is currently unavailable]"
         
         return QueryResponse(
             query=request.query,
             context=context,
-            answer=answer_stub,
+            answer=ai_answer,
             sources=sources
         )
     
@@ -196,5 +200,6 @@ async def health_check():
         "status": "healthy",
         "embedding_service": "initialized",
         "vector_store": "ready" if embedding_service.vector_store else "empty",
-        "documents_count": len(uploaded_documents)
+        "documents_count": len(uploaded_documents),
+        "answer_generator": "available" if answer_generator.is_available() else "unavailable"
     }
