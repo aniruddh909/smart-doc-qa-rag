@@ -14,7 +14,7 @@ The system consists of three main components:
 2. **Vector Search Engine**: Uses FAISS for fast similarity search across document embeddings
 3. **AI Answer Generation**: Leverages Hugging Face transformers to generate contextual answers
 
-## Technology Stack
+## Tech Stack
 
 ### Backend
 - **FastAPI**: High-performance Python web framework for API development
@@ -158,29 +158,17 @@ smart-doc-qa-rag/
 └── README.md                  # Project documentation
 ```
 
-## Development Guidelines
-
 ### Code Quality
 - Maintain comprehensive test coverage for new features
 - Follow consistent naming conventions and code structure
 - Include error handling and input validation
 - Document complex algorithms and business logic
 
-### Git Workflow
-- Create meaningful commit messages with clear descriptions
-- Keep commits focused on single features or fixes
-- Update documentation when adding new functionality
-- Run tests before committing changes
-
 ### Performance Considerations
 - Optimize vector search operations for large document collections
 - Implement efficient text chunking strategies
 - Monitor memory usage with large language models
 - Cache frequently accessed embeddings when possible
-
-## Contributing
-
-This project welcomes contributions in the form of bug reports, feature suggestions, and code improvements. Please ensure all changes include appropriate tests and documentation updates.
 
 ## Future Enhancements
 
