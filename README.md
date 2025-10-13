@@ -136,28 +136,6 @@ The project includes a comprehensive test suite covering:
 
 Run tests using the pytest command with verbose output for detailed results.
 
-## Project Structure
-
-```
-smart-doc-qa-rag/
-├── backend/
-│   ├── main.py                 # FastAPI application entry point
-│   ├── routers/                # API route definitions
-│   ├── services/               # Core business logic
-│   ├── utils/                  # Utility functions
-│   └── tests/                  # Test suite
-├── frontend/
-│   ├── src/
-│   │   ├── components/         # React components
-│   │   ├── App.js             # Main application component
-│   │   └── index.js           # React entry point
-│   ├── public/                # Static assets
-│   └── package.json           # Frontend dependencies
-├── docs/                      # Project documentation
-├── requirements.txt           # Python dependencies
-└── README.md                  # Project documentation
-```
-
 ### Code Quality
 - Maintain comprehensive test coverage for new features
 - Follow consistent naming conventions and code structure
