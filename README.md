@@ -2,6 +2,9 @@
 
 A comprehensive document question-answering system built with Retrieval-Augmented Generation (RAG) architecture. This application allows users to upload documents and ask natural language questions, receiving intelligent answers based on the document content.
 
+https://github.com/aniruddh909/smart-doc-qa-rag/blob/main/frontend/ss.png?raw=true<img width="1620" height="737" alt="image" src="https://github.com/user-attachments/assets/9c3498ae-94b8-48ed-9b57-70544b92a1d4" />
+
+
 ## Overview
 
 This project implements a full-stack RAG system that combines document processing, vector search, and AI-powered question answering. Users can upload PDF, DOCX, or TXT files through a modern React interface and query their content using natural language questions.
