@@ -54,11 +54,10 @@ const DocumentUpload = ({ onDocumentUploaded, uploadedDocuments, onClearDocument
     formData.append('file', file);
 
     try {
-      const response = await axios.post('/api/upload', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
+      // Do not set 'Content-Type' manually here — letting the browser
+      // set it ensures the multipart boundary is included and the
+      // server can parse the uploaded file correctly.
+      const response = await axios.post('/api/upload', formData);
 
       setUploadStatus({
         type: 'success',
