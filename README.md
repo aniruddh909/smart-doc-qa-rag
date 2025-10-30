@@ -4,7 +4,6 @@ A comprehensive document question-answering system built with Retrieval-Augmente
 
 https://github.com/aniruddh909/smart-doc-qa-rag/blob/main/frontend/ss.png?raw=true<img width="1620" height="737" alt="image" src="https://github.com/user-attachments/assets/9c3498ae-94b8-48ed-9b57-70544b92a1d4" />
 
-
 ## Overview
 
 This project implements a full-stack RAG system that combines document processing, vector search, and AI-powered question answering. Users can upload PDF, DOCX, or TXT files through a modern React interface and query their content using natural language questions.
@@ -20,6 +19,7 @@ The system consists of three main components:
 ## Tech Stack
 
 ### Backend
+
 - **FastAPI**: High-performance Python web framework for API development
 - **LangChain**: Framework for building applications with large language models
 - **Hugging Face Transformers**: Pre-trained models for natural language processing
@@ -27,17 +27,20 @@ The system consists of three main components:
 - **Embedding Models**: Sentence transformers for document vectorization
 
 ### Frontend
+
 - **React 18**: Modern JavaScript library for building user interfaces
 - **Axios**: HTTP client for API communication
 - **Lucide React**: Icon library for consistent UI elements
 - **CSS3**: Custom styling with gradients and animations
 
 ### Document Processing
+
 - **pypdf**: PDF text extraction and processing
 - **python-docx**: Microsoft Word document parsing
 - **Text Processing**: Built-in support for plain text files
 
 ### Development Tools
+
 - **Pytest**: Comprehensive testing framework
 - **Git**: Version control with organized commit history
 - **npm**: Package management for frontend dependencies
@@ -45,18 +48,21 @@ The system consists of three main components:
 ## Features
 
 ### Document Management
+
 - Support for multiple file formats (PDF, DOCX, TXT)
 - Drag-and-drop file upload interface
 - Automatic text extraction and preprocessing
 - Document metadata tracking and storage
 
 ### Intelligent Query System
+
 - Natural language question processing
 - Contextual answer generation using AI models
 - Relevance scoring for retrieved information
 - Source attribution for transparency
 
 ### User Interface
+
 - Modern, responsive web interface
 - Real-time feedback and loading states
 - Tabbed results display (AI answers and document context)
@@ -64,6 +70,7 @@ The system consists of three main components:
 - Copy-to-clipboard functionality for answers
 
 ### Technical Capabilities
+
 - Vector-based semantic search
 - Text chunking with overlap for better context
 - Fallback model support for different hardware configurations
@@ -73,6 +80,7 @@ The system consists of three main components:
 ## API Endpoints
 
 ### Core Functionality
+
 - `POST /api/upload` - Upload and process documents
 - `POST /api/query` - Submit questions and receive AI-generated answers
 - `GET /api/documents` - List all uploaded documents with metadata
@@ -80,17 +88,20 @@ The system consists of three main components:
 - `GET /api/health` - System health check for Q&A functionality
 
 ### System Endpoints
+
 - `GET /health` - Main application health check
 - `GET /` - Root endpoint with health redirect
 
 ## Installation and Setup
 
 ### Prerequisites
+
 - Python 3.8 or higher
 - Node.js 16 or higher
 - Git for version control
 
 ### Backend Setup
+
 1. Clone the repository
 2. Navigate to the project directory
 3. Create a Python virtual environment
@@ -98,23 +109,27 @@ The system consists of three main components:
 5. Run the FastAPI server using uvicorn
 
 ### Frontend Setup
+
 1. Navigate to the frontend directory
 2. Install Node.js dependencies using npm
 3. Start the React development server
 4. Access the application through your web browser
 
 ### Development Environment
+
 The application uses a proxy configuration to connect the React frontend (port 3000) with the FastAPI backend (port 8000), enabling seamless development and testing.
 
 ## Usage Workflow
 
 ### Document Upload
+
 1. Access the web interface through your browser
 2. Use the drag-and-drop area or click to select files
 3. Upload PDF, DOCX, or TXT documents
 4. Wait for processing completion confirmation
 
 ### Querying Documents
+
 1. Enter natural language questions in the query interface
 2. Use provided sample questions or create custom queries
 3. Receive AI-generated answers with supporting context
@@ -122,6 +137,7 @@ The application uses a proxy configuration to connect the React frontend (port 3
 5. Copy answers to clipboard for external use
 
 ### Results Interpretation
+
 - **AI Answers Tab**: Generated responses based on document content
 - **Context Tab**: Relevant text excerpts from source documents
 - **Relevance Scores**: Numerical indicators of content similarity
@@ -140,12 +156,21 @@ The project includes a comprehensive test suite covering:
 Run tests using the pytest command with verbose output for detailed results.
 
 ### Code Quality
+
 - Maintain comprehensive test coverage for new features
 - Follow consistent naming conventions and code structure
 - Include error handling and input validation
 - Document complex algorithms and business logic
 
+### Git Workflow
+
+- Create meaningful commit messages with clear descriptions
+- Keep commits focused on single features or fixes
+- Update documentation when adding new functionality
+- Run tests before committing changes
+
 ### Performance Considerations
+
 - Optimize vector search operations for large document collections
 - Implement efficient text chunking strategies
 - Monitor memory usage with large language models
